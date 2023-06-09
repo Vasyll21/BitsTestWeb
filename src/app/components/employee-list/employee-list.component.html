@@ -1,0 +1,29 @@
+<div class="list row">
+    <div class="col-md-6">
+      <h4>Employee List</h4>
+    <div class="col-md-6">
+        <table class="table table-bordered">
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Date Of Birth</th>
+              <th>Married</th>
+              <th>Phone</th>
+              <th>Salary</th>
+              <th width="220px">Action</th>
+            </tr>
+            <tr *ngFor="let employee of employees">
+              <td>{{ employee.id }}</td>
+              <td>{{ employee.name }}</td>
+              <td>{{ employee.dateOfBirth }}</td>
+              <td>{{ employee.married === true ? 'Yes' : 'No' }}</td>
+              <td>{{ employee.phone }}</td>
+              <td>{{ employee.salary }}</td>
+              <td>
+                <a href="#" [routerLink]="['/employees/', employee.id]" class="btn btn-primary">Edit</a>
+                <button type="button" (click)="deleteEmployee(employee.id)" class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+          </table>
+    </div>
+  </div>

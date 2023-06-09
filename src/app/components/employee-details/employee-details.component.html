@@ -1,0 +1,75 @@
+<div style="width: 500px; margin: auto;">
+  <div *ngIf="currentEmployee" class="edit-form">
+    <h4>Employee</h4>
+    <form>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          [(ngModel)]="currentEmployee.name"
+          name="name"
+        />
+      </div>
+      <div class="form-group">
+        <label for="dateOfBirth">Date of Birth</label>
+        <input
+          type="date"
+          class="form-control"
+          id="dateOfBirth"
+          [(ngModel)]="currentEmployee.dateOfBirth"
+          name="dateOfBirth"
+        />
+      </div>
+      <div class="form-group">
+        <label for="dateOfBirth">Married</label>
+        <input
+          type="checkbox"
+          class="form-control"
+          id="married"
+          [(ngModel)]="currentEmployee.married"
+          name="married"
+        />
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <input
+          type="text"
+          class="form-control"
+          id="phone"
+          [(ngModel)]="currentEmployee.phone"
+          name="phone"
+        />
+      </div>
+      <div class="form-group">
+        <label for="phone">Salary</label>
+        <input
+          type="number"
+          class="form-control"
+          id="salary"
+          [(ngModel)]="currentEmployee.salary"
+          name="salary"
+        />
+      </div>
+    </form>
+
+    <button class="badge badge-danger mr-2" (click)="deleteProduct()">
+      Delete
+    </button>
+
+    <button
+      type="submit"
+      class="badge badge-success"
+      (click)="updateProduct()"
+    >
+      Update
+    </button>
+    <p></p>
+  </div>
+
+  <div *ngIf="!currentEmployee">
+    <br />
+    <p>This product is not accessible</p>
+  </div>
+</div>

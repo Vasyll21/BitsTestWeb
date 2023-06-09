@@ -1,0 +1,12 @@
+<div class="input-container">
+    <label for="">Choose your file</label>
+    <input
+      id="file-importer"
+      type="file"
+      accept=".csv"
+      filename="file?.name || ''"
+      (change)="handleSelectFile($event)"
+    />
+  
+    <button (click)="handleUploadFile()">Upload</button>
+  </div>
